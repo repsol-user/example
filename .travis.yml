@@ -1,8 +1,8 @@
-sudo: required
 python:
-    - "3.5"
-    - "pypy3"
+  - "3.5"
+  - "pypy3"
 install:
-    - "sudo pip install -r requirements.txt"
+  - "pip install -r requirements.txt"
+  - "pip install ."
 script:
-    - py.test tests
+  - py.test tests
