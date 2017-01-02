@@ -4,6 +4,5 @@ python:
   - "pypy3"
 install:
   - "pip install -r requirements.txt"
-  - "pip install ."
 script:
   - py.test tests
