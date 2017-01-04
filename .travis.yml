@@ -1,8 +1,14 @@
+sudo: required
 language: python
 python:
   - "3.5"
   - "pypy3"
+services:
+  - docker
 install:
   - "pip install -r requirements.txt"
 script:
-  - py.test tests
+  - py.test tests/unit
+  - docker build -t example .
+  - docker run -d -p 127.0.0.1:8000:80 --name=example example
+  - py.test tests/system
